@@ -1,5 +1,10 @@
 # CS50Web-Project 1
 <br>
+## Note : Project in progress <br>
+### completed Tasks : 
+    ✅ Entry Page 
+    ✅ Index Page 
+        ✳ Search : in progress
 
 ## Required tasks for this project as provided : 
 <br>
