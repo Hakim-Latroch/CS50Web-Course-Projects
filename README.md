@@ -1,10 +1,13 @@
 # CS50Web-Project 1
+
 <br>
+
 ## Note : Project in progress <br>
+
 ### completed Tasks : 
     ✅ Entry Page 
     ✅ Index Page 
-        ✳ Search : in progress
+        ➡ Search : in progress
 
 ## Required tasks for this project as provided : 
 <br>
@@ -30,11 +33,9 @@ If the entry does exist, the user should be presented with a page that displays 
  <li>Clicking on any of the entry names on the search results page should take the user to that entry’s page.</li>
  </ul></li>
  <br>
- <li>New Page: Clicking “Create New Page” in the sidebar should take the user to a page where they can create a new encyclopedia entry.
-</li>
 
 <br>
-  <li>ONew Page: Clicking “Create New Page” in the sidebar should take the user to a page where they can create a new encyclopedia entry : <br>
+  <li>New Page: Clicking “Create New Page” in the sidebar should take the user to a page where they can create a new encyclopedia entry : <br>
    <ul>
     <li>Users should be able to enter a title for the page and, in a textarea, should be able to enter the Markdown content for the page.
 </li>
