@@ -64,7 +64,7 @@ If the entry does exist, the user should be presented with a page that displays 
 <br>
 
 ## Built With
-- ![Django](https://img.shields.io/badge/Django%20-%20green?style=flat-square)
+- ![Django](https://img.shields.io/badge/Django%20-%20green?style=flat-square&logo=Django&logoColor=white)
 - ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)   
 - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
