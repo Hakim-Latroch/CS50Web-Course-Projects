@@ -30,6 +30,7 @@ def search(request):
         return render(request, "encyclopedia/title.html", {
         "title": query,
         "found": result,
+
         
             })
     

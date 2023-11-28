@@ -4,12 +4,16 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
 def find_query(query) :
-    entries = list_entries(); 
-    for entry in entries:
-        if query.lower() in entry:
-            return True
-    else : 
-     return False
+    entries = list_entries()
+    result =[]
+    for index,  entry in enumerate(entries):
+        if query.lower() in map(str.lower, entry):
+            result.append(entry)
+            if index == len(entries) - 1:
+                return list(sorted(result))         
+    else: 
+        return False
+    
 
 
 def list_entries():
