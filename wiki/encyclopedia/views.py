@@ -19,15 +19,18 @@ def entry(request, title):
     })
 
 def search(request):
+    
     if request.method == "POST":
         query = request.POST.get("q")  
         entries = util.list_entries()  
         if  query.lower() in  map(str.lower, entries):
             return HttpResponseRedirect(reverse("wiki:entry", args=[query]))  
-        else:
-            return render(request, "encyclopedia/title.html", {
-                "title": query,
-                "notFound": True
+        else: 
+            result = util.find_query(query=query)
+        return render(request, "encyclopedia/title.html", {
+        "title": query,
+        "found": result,
+        
             })
     
 

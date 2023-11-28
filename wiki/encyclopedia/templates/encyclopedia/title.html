@@ -13,6 +13,13 @@
     <h1>There is currently no articles about "{{title}}" <h1>
     <h2>Feel free to be the one to write it</h2>
     <a href="#">Create New Page</a>
+    {% elif searchResult %}
+    <h1>Search result for : {{ title }} </h1>
+    <ul>
+        {% for result in results %}
+            <li><a href="#"> {{ result }} </a></li>
+        {% endfor %}
+    </ul>
     {% else %}
     <h1>{{title}}</h1>
      {{title}}

@@ -3,11 +3,14 @@ import re
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
+def find_query(query) :
+    entries = list_entries(); 
+    for entry in entries:
+        if query.lower() in entry:
+            return True
+    else : 
+     return False
 
-def list_search(query):
-    _, filenames = default_storage.listdir("entries")
-    return list(sorted(re.sub(r"\.md$", f"{query}", filename)
-                for filename in filenames if filename.endswith(".md")))
 
 def list_entries():
     """
