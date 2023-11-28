@@ -30,7 +30,7 @@
     <h1>Found "{{ title }}" in : </h1>
     <ul>
         {% for result in found %}
-            <li><a href="#"> {{ result }} </a></li>
+            <li><a href="{% url 'wiki:entry' result%}"> {{ result }} </a></li>
         {% endfor %}
     </ul>
     {%endif%}

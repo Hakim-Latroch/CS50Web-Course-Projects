@@ -3,17 +3,18 @@ import re
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
-def find_query(query) :
+def find_query(query):
     entries = list_entries()
-    result =[]
-    for index,  entry in enumerate(entries):
+    result = []
+
+    for entry in entries:
         if query.lower() in map(str.lower, entry):
             result.append(entry)
-            if index == len(entries) - 1:
-                return list(sorted(result))         
-    else: 
+
+    if result:
+        return list(sorted(result))
+    else:
         return False
-    
 
 
 def list_entries():

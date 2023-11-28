@@ -26,10 +26,12 @@ def search(request):
         if  query.lower() in  map(str.lower, entries):
             return HttpResponseRedirect(reverse("wiki:entry", args=[query]))  
         else: 
-            result = util.find_query(query=query)
+            result = util.find_query(query=query) 
         return render(request, "encyclopedia/title.html", {
         "title": query,
         "found": result,
+             
+            
 
         
             })
