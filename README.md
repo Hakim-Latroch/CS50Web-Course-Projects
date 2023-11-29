@@ -8,8 +8,9 @@
     ✅ Entry Page 
     ✅ Index Page 
     ✅ Search 
-    ✅ New Page : in progress
-        ➡ Edit Page : in progress
+    ✅ New Page 
+    ✅ Edit Page 
+         ➡ Random Page : in progress
 
 ## Required tasks for this project as provided : 
 <br>
