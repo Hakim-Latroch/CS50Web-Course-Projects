@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-
+import random
 from . import util
 
 
 
 def index(request):
+   
     return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
+        "entries": util.list_entries(),
+        
     })
 def entry(request, title):
     entry = util.get_entry(title=title)
@@ -16,6 +18,17 @@ def entry(request, title):
         "entry": entry,
         "title":f"{title}",
         "notFound":entry == None
+    })
+
+
+def randomEntry(request):
+    entries = util.list_entries()
+    entryName = random.choice(entries)
+    entry = util.get_entry(title=entryName)
+    return render(request, "encyclopedia/random.html",{
+        "entry": entry,
+        "title":f"{entryName}",
+
     })
 
 def search(request):
