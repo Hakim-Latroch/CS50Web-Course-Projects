@@ -1,0 +1,30 @@
+{% extends "encyclopedia/layout.html" %}
+ 
+   {% block title %}
+    {% if found %}
+    Search : {{title}} </title> 
+    {% else %}
+     {{title}} Not Found </title> 
+    {% endif %}
+   {% endblock %}
+
+{%block body%}
+
+   
+    {% if found %}
+    <h1>Found "{{ title }}" in : </h1>
+    <ul>
+        {% for result in found %}
+            <li><a href="{% url 'wiki:entry' result%}"> {{ result }} </a></li>
+        {% endfor %}
+    </ul>
+    {%else%}
+    <h1>There is currently no articles about "{{title}}" <h1>
+        <h2>Feel free to be the one to write it </h2>
+        <a href="#">Create New Page</a>
+    {%endif%}
+ 
+    
+
+
+{%endblock%}

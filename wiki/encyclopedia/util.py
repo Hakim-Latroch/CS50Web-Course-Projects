@@ -8,7 +8,7 @@ def find_query(query):
     result = []
 
     for entry in entries:
-        if query.lower() in map(str.lower, entry):
+        if query.lower() in entry.lower():
             result.append(entry)
 
     if result:

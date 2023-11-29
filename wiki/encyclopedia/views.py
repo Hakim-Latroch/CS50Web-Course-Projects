@@ -27,13 +27,10 @@ def search(request):
             return HttpResponseRedirect(reverse("wiki:entry", args=[query]))  
         else: 
             result = util.find_query(query=query) 
-        return render(request, "encyclopedia/title.html", {
+        return render(request, "encyclopedia/search.html", {
         "title": query,
         "found": result,
              
-            
-
-        
             })
     
 
