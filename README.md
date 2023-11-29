@@ -7,7 +7,8 @@
 ### completed Tasks : 
     ✅ Entry Page 
     ✅ Index Page 
-        ➡ Search : in progress
+    ✅ Search 
+        ➡ New Page : in progress
 
 ## Required tasks for this project as provided : 
 <br>
