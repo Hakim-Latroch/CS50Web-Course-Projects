@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    edit entry
+{% endblock %}
+
+{% block body %}
+    
+
+    <form action="{% url 'wiki:saveEdit' %}" method="POST" class="new-entry-form">
+        {% csrf_token %}
+        <label for="newTitle">Edit Title</label>
+        <input style="display: none;" class="new-entry-title" type="text" name="originalTitle" value="{{originalTitle}}">
+        <input class="new-entry-title" type="text" name="newTitle" value="{{originalTitle}}">
+        <label for="new-entry-content">Edit Content</label>
+        <textarea name="newContent" class="new-entry-content">{{originalContent}}</textarea>
+        <input class="save-new-entry" type="submit">
+
+    </form>
+
+{% endblock %}
