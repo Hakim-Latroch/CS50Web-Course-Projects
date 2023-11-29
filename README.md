@@ -10,7 +10,8 @@
     ✅ Search 
     ✅ New Page 
     ✅ Edit Page 
-         ➡ Random Page : in progress
+    ✅ Random Page
+         ➡ Markdown to HTML Conversion : in progress
 
 ## Required tasks for this project as provided : 
 <br>
