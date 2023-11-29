@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create new entry
+{% endblock %}
+
+{% block body %}
+    <h1>Create a new entry</h1>
+    {%if entryExists %}
+    <div style="color :red"  >Entry Already Exists <a href="{%url 'wiki:entry' oldTitle%}">{{oldTitle}}</a></div>
+    {%endif%}
+
+    <form action="{% url 'wiki:addNew' %}" method="POST" class="new-entry-form">
+        {% csrf_token %}
+        <label for="newTitle">New entry title</label>
+        <input class="new-entry-title" type="text" name="newTitle" value="{{oldTitle}}">
+        <label for="new-entry-content">Content</label>
+        <textarea name="newContent" class="new-entry-content">{{oldContent}}</textarea>
+        <input class="save-new-entry" type="submit">
+
+    </form>
+
+{% endblock %}

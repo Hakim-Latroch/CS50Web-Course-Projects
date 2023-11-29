@@ -33,5 +33,24 @@ def search(request):
              
             })
     
+def new(request) :
+    return render(request, "encyclopedia/new.html", {
+
+    })
+
+def addNew(request) : 
+    if request.method == "POST":
+        newEntry_title = request.POST.get("newTitle")
+        newEntry_content = request.POST.get("newContent")
+        if util.save_entry(newEntry_title, newEntry_content) :
+            return HttpResponseRedirect(reverse("wiki:entry", args=[newEntry_title]))
+        else :
+            return render(request, "encyclopedia/new.html", {
+                "oldTitle" : newEntry_title,
+                "oldContent" : newEntry_content,
+                "entryExists" : True
+            })
+    
+    
 
 
