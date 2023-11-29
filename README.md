@@ -11,7 +11,8 @@
     ✅ New Page 
     ✅ Edit Page 
     ✅ Random Page
-         ➡ Markdown to HTML Conversion : in progress
+    ✅ Markdown to HTML Conversion
+        ➡Finishin Up : in progress
 
 ## Required tasks for this project as provided : 
 <br>
