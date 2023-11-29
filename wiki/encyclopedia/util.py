@@ -30,7 +30,7 @@ def save_entry(title, content):
     """
     Saves an encyclopedia entry, given its title and Markdown
     content. If an existing entry with the same title already exists,
-    it is replaced.
+    it shows error.
     """
     filename = f"entries/{title}.md"
     if default_storage.exists(filename):
@@ -40,6 +40,17 @@ def save_entry(title, content):
         default_storage.save(filename, ContentFile(content))
         return True
 
+
+def save_edit(title, newTitle, content):
+    """
+    Saves an encyclopedia edit, given its title and Markdown
+    content. by replacing the existing entry.
+    """
+    filename = f"entries/{title}.md"
+    newFileName = f"entries/{newTitle}.md"
+    default_storage.delete(filename)
+    default_storage.save(newFileName, ContentFile(content))
+       
 
 def get_entry(title):
     """

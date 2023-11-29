@@ -12,10 +12,17 @@
 {% if notFound %}
     <h1>There is currently no articles about "{{title}}" <h1>
     <h2>Feel free to be the one to write it</h2>
-    <a href="#">Create New Page</a>
+    <a href="{%url 'wiki:new'%}">Create New Page</a>
 
     {% else %}
     <h1>{{title}}</h1>
+    <form action="{%url 'wiki:edit'%}" method="POST">
+        {% csrf_token %}
+        <input name="originalTitle" type="text" style="display: none;" value="{{title}}">
+        <input name="originalContent" type="text" style="display: none;" value="{{entry}}">
+        <input type="submit" value="Edit">
+    </form>
+    
      {{title}}
      {{entry}}
     {% endif %}

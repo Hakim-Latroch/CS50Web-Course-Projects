@@ -50,6 +50,28 @@ def addNew(request) :
                 "oldContent" : newEntry_content,
                 "entryExists" : True
             })
+
+def edit(request) :
+     if request.method == "POST":
+        originalTitle = request.POST.get("originalTitle")
+        originalContent = request.POST.get("originalContent")
+        return render(request, "encyclopedia/edit.html",{
+        "originalTitle" : originalTitle ,
+        "originalContent" : originalContent
+
+        })       
+def saveEdit(request):
+    if request.method == "POST" :
+       originalTitle = request.POST.get("originalTitle")
+       newTitle = request.POST.get("newTitle")
+       newContent = request.POST.get("newContent")
+       util.save_edit(originalTitle, newTitle, newContent)
+       return  HttpResponseRedirect(reverse("wiki:entry", args=[newTitle]))
+    else :
+        return render(request, "encyclopedia/edit.html",{
+
+            })
+
     
     
 
