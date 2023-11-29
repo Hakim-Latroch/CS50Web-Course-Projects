@@ -7,9 +7,9 @@
 {% block body %}
     <h1>All Pages</h1>
 
-    <ul>
+    <ul class=" list-inline " >
         {% for entry in entries %}
-            <li><a href="{%url 'wiki:entry' entry %}"> {{ entry }} </a></li>
+            <li class= "px-5 py-5 m-1 bg-light btn " ><a class="btn px-5 py-5  btn-outline-primary" href="{%url 'wiki:entry' entry %}"> {{ entry }} </a></li>
         {% endfor %}
     </ul>
 

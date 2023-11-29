@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import random
+from markdown2 import markdown
 from . import util
 
 
@@ -14,8 +15,9 @@ def index(request):
     })
 def entry(request, title):
     entry = util.get_entry(title=title)
+    entry_converted = markdown(entry)
     return render(request, "encyclopedia/title.html",{
-        "entry": entry,
+         "entry": entry_converted,
         "title":f"{title}",
         "notFound":entry == None
     })
@@ -25,8 +27,9 @@ def randomEntry(request):
     entries = util.list_entries()
     entryName = random.choice(entries)
     entry = util.get_entry(title=entryName)
+    entry_converted = markdown(entry)
     return render(request, "encyclopedia/random.html",{
-        "entry": entry,
+         "entry": entry_converted,
         "title":f"{entryName}",
 
     })
